@@ -73,7 +73,7 @@ class StoryPageState extends State<StoryPage> {
                 flex: 2,
                 child: Visibility(
                   visible: storyBrain.buttonShouldBeVisible(1),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {
                       //Choice 1 made by user.
                       //Step 18 - Call the nextStory() method from storyBrain
@@ -82,7 +82,11 @@ class StoryPageState extends State<StoryPage> {
                         storyBrain.nextStory(1);
                       });
                     },
-                    color: Colors.red,
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        Colors.red,
+                      ),
+                    ),
                     child: Text(
                       //Step 13 - Use the storyBrain to get the text for choice 1.
                       storyBrain.getChoice1(),
@@ -102,7 +106,7 @@ class StoryPageState extends State<StoryPage> {
                 //Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
                 child: Visibility(
                   visible: storyBrain.buttonShouldBeVisible(2),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {
                       //Choice 2 made by user.
                       //Step 19 - Call the nextStory() method from
@@ -111,7 +115,11 @@ class StoryPageState extends State<StoryPage> {
                         storyBrain.nextStory(2);
                       });
                     },
-                    color: Colors.blue,
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        Colors.blue,
+                      ),
+                    ),
                     child: Text(
                       //Step 14 - Use the storyBrain to get the text for choice 2.
                       storyBrain.getChoice2(),
